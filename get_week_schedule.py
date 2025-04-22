@@ -3,14 +3,29 @@ TODO:
 - add more commandline functionality, such as being able to pass in a specific day if wanted/skip around weeks
 '''
 
+import argparse
 from datetime import date, timedelta
 import sys
 
 MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY = 0, 1, 2, 3, 4, 5, 6
 DAY = ('ABCDE', 'FGABC', 'DEFGA', 'BCDEF', 'GABCD', 'EFGAB', 'CDEFG')
 
-def get_mondays_date():
-    today = date.today()
+parser = argparse.ArgumentParser(description='Find the week\'s schedule')
+
+parser.add_argument(
+    'filename', 
+    help='the file for the full schedule with comma separated values'
+)
+
+parser.add_argument(
+    '-d', '--date', 
+    help='what date to use, format yyyy-mm-dd (default is today)',
+    default=0
+)
+
+args = parser.parse_args()
+
+def get_mondays_date(today):
     current_weekday = today.weekday()
 
     if current_weekday == MONDAY:
@@ -35,12 +50,17 @@ def parse_line(file):
         return weekday, formatted_date, schedule_day.rstrip()
     
 
+if args.date == 0:
+    today = date.today()
+else:
+    today = map(int, args.date.split('-'))
+    today = date(*today)
 
-monday = get_mondays_date()
+monday = get_mondays_date(today)
 assert(monday.weekday() == MONDAY)
 
 try:
-    with open(sys.argv[1], 'r') as file:
+    with open(args.filename, 'r') as file:
         while True:
             weekday, formatted_date, schedule_day = parse_line(file)
 
