@@ -1,6 +1,7 @@
 '''
 TODO: 
-- add more commandline functionality, such as being able to pass in a specific day if wanted/skip around weeks
+- add more commandline functionality, skip around weeks
+- refactor
 '''
 
 import argparse
