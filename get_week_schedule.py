@@ -15,14 +15,12 @@ parser = argparse.ArgumentParser(description='Find the week\'s schedule')
 
 parser.add_argument(
     'filename', 
-    help='the file for the full schedule with comma separated values'
-)
+    help='the file for the full schedule with comma separated values')
 
 parser.add_argument(
     '-d', '--date', 
     help='what date to use, format yyyy-mm-dd (default is today)',
-    default=0
-)
+    default=0)
 
 args = parser.parse_args()
 
