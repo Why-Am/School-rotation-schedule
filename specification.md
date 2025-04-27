@@ -1,0 +1,3 @@
+- [ ] Week-by-week view
+- [ ] Ability to jump to today
+  - [ ] Enter a date to jump to
