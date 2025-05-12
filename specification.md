@@ -1,3 +1,5 @@
-- [ ] Week-by-week view
-- [ ] Ability to jump to today
-  - [ ] Enter a date to jump to
+- [x] Week-by-week view
+- [x] Ability to jump to today
+- [ ] Enter a date to jump to
+- [ ] Indicate when beginning/end is reached
+- [ ] Add file picker dialog
