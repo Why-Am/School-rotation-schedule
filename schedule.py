@@ -2,7 +2,7 @@ from datetime import date, timedelta
 
 import pygame as pg
 
-from ui_constants import *
+from ui_constants import WIDTH, HEIGHT
 
 
 class Schedule:

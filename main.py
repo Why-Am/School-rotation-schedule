@@ -3,8 +3,8 @@ from sys import argv
 import pygame as pg
 
 from buttons import Button
-from schedule import *
-from ui_constants import *
+from schedule import Schedule
+from ui_constants import BUTTON_H, BUTTON_W, HEIGHT, WIDTH
 
 pg.init()
 screen = pg.display.set_mode((WIDTH, HEIGHT))
